@@ -10,7 +10,7 @@ def delete_mark():
     for file in files:
         if file.endswith('.svg'):
             path = file
-            f = open(path, 'r')
+            with open(path, 'r') as f
             data = f.read()
             j, k = 0, 0
             for i in range(len(data)):
@@ -23,7 +23,7 @@ def delete_mark():
                     k = i + 1
             text = data[j: k]
             upd_data = data.replace(text, '')
-            f = open(path, 'w')
+            with open(path, 'w') as f
             f.write(upd_data)
             f.close()
         else:
